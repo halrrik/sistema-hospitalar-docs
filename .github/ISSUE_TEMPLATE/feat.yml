@@ -1,0 +1,49 @@
+name: Nueva sección o mejora
+description: Proponer contenido nuevo o ampliación en la documentación
+title: "feat(docs): "
+labels: ["feat", "docs"]
+assignees: []
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: ¿Qué valor aporta esta sección/mejora? ¿Para quién?
+      placeholder: "Ej.: Clarificar el flujo de admisiones para médicos..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Alcance
+      description: ¿Qué archivos/secciones serán creados o modificados?
+      placeholder: |
+        docs/04-discovery/Jornadas-y-Mapa-de-Usuario.md (nueva subsección)
+        docs/03-mvp/Resumen-MVP1-MVP2.md (actualizar métricas)
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios de aceptación
+      description: ¿Qué condiciones deben cumplirse para cerrar la issue?
+      placeholder: |
+        - Sección redactada en español técnico.
+        - Enlaces internos verificados.
+        - Índice actualizado si aplica.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Redacción en **español**
+          required: true
+        - label: Coherencia con Prompt Maestro e Índice
+          required: true
+        - label: Sin mezclar temas no relacionados
+          required: true

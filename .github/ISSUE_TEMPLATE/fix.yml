@@ -1,0 +1,44 @@
+name: Corrección de documentación
+description: Reportar error, incoherencia o desactualización en los docs
+title: "fix(docs): "
+labels: ["fix", "docs"]
+assignees: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Descripción del problema
+      description: ¿Qué está mal? ¿Dónde?
+      placeholder: "Ej.: En Modelo ER Textual, la relación atenciones→admisiones es incorrecta..."
+    validations:
+      required: true
+
+  - type: input
+    id: files
+    attributes:
+      label: Archivos afectados
+      description: Rutas relativas dentro de `docs/`
+      placeholder: "docs/05-modelo-datos/Modelo-ER-Textual.md"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidencia / referencias
+      description: Enlaces, capturas o citas de la fuente correcta (si aplica)
+      placeholder: "Link a conversación, commit, norma legal, etc."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Mantener estilo y tono (español técnico)
+          required: true
+        - label: Verificar enlaces internos
+          required: true
+        - label: Actualizar Índice/CHANGELOG si aplica
+          required: true
