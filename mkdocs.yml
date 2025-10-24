@@ -1,22 +1,29 @@
 site_name: Sistema Hospitalar — Documentación
+docs_dir: docs
+strict: true
+
 nav:
   - Inicio: index.md
   - Técnico:
-      - Prompt Maestro: docs/01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md
+      - Prompt Maestro: 01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md
   - Negocio:
-      - Documento de Negocio: docs/02-negocio/Documento-de-Negocio.md
+      - Documento de Negocio: 02-negocio/Documento-de-Negocio.md
   - MVP y Roadmap:
-      - Resumen MVP1/MVP2: docs/03-mvp/Resumen-MVP1-MVP2.md
+      - Resumen MVP1/MVP2: 03-mvp/Resumen-MVP1-MVP2.md
   - Discovery:
-      - Jornadas y Mapa de Usuario: docs/04-discovery/Jornadas-y-Mapa-de-Usuario.md
+      - Jornadas y Mapa de Usuario: 04-discovery/Jornadas-y-Mapa-de-Usuario.md
   - Modelo de Datos:
-      - Modelo ER textual: docs/05-modelo-datos/Modelo-ER-Textual.md
+      - Modelo ER textual: 05-modelo-datos/Modelo-ER-Textual.md
   - Manuales:
-      - Manual Médicos y Recepcionistas: docs/06-manual-uso/Manual-Medicos-Recepcionistas.md
+      - Manual Médicos y Recepcionistas: 06-manual-uso/Manual-Medicos-Recepcionistas.md
   - Privacidad:
-      - Política de Protección de Datos: docs/07-privacidad/Politica-Proteccion-de-Datos.md
+      - Política de Protección de Datos: 07-privacidad/Politica-Proteccion-de-Datos.md
+  - Gobernanza:
+      - Manual de Actualización (Git): 00-gobernanza/Manual-Actualizacion-Git.md
+
 theme:
   name: material
+
 markdown_extensions:
   - admonition
   - tables
