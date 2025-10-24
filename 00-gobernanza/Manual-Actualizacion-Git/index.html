@@ -1,0 +1,1360 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación técnica y funcional del Sistema Hospitalar (Clínica Perú)">
+      
+      
+        <meta name="author" content="Equipo de Desarrollo">
+      
+      
+      
+        <link rel="prev" href="../../07-privacidad/Politica-Proteccion-de-Datos/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Manual de Actualización (Git) - Sistema Hospitalar — Documentación</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-flujo-basico-de-trabajo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Sistema Hospitalar — Documentación" class="md-header__button md-logo" aria-label="Sistema Hospitalar — Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistema Hospitalar — Documentación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Manual de Actualización (Git)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sistema Hospitalar — Documentación" class="md-nav__button md-logo" aria-label="Sistema Hospitalar — Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistema Hospitalar — Documentación
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Técnico
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Técnico
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-tecnico/Prompt-Maestro-Sistema-Hospitalar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Maestro — Sistema Hospitalar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Negocio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Negocio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-negocio/Documento-de-Negocio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documento de Negocio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MVP y Roadmap
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            MVP y Roadmap
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-mvp/Resumen-MVP1-MVP2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resumen MVP1 / MVP2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Discovery
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Discovery
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-discovery/Jornadas-y-Mapa-de-Usuario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Jornadas y Mapa de Usuario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modelo de Datos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Modelo de Datos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-modelo-datos/Modelo-ER-Textual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modelo ER Textual
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Manuales
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Manuales
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06-manual-uso/Manual-Medicos-Recepcionistas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manual Médicos y Recepcionistas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Privacidad
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Privacidad
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07-privacidad/Politica-Proteccion-de-Datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Política de Protección de Datos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Gobernanza
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Gobernanza
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Manual de Actualización (Git)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manual de Actualización (Git)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#3-flujo-basico-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Flujo básico de trabajo
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Flujo básico de trabajo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-actualizar-main-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Actualizar main local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-crear-rama-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Crear rama de trabajo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-editar-y-validar" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Editar y validar
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-commit-con-convencion" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Commit con convención
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-push-y-pull-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Push y Pull Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-revision-y-merge" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Revisión y merge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-convenciones-de-commit-conventional-commits" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Convenciones de commit (Conventional Commits)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-versionado-semantico-y-changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Versionado semántico y changelog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ubicaciones-canonicas-de-documentos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Ubicaciones canónicas de documentos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-checklist-antes-del-merge-pr" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Checklist antes del merge (PR)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-comandos-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Comandos útiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-buenas-practicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Buenas prácticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-plantillas-recomendadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Plantillas (recomendadas)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Plantillas (recomendadas)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-githubpull_request_templatemd" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 .github/PULL_REQUEST_TEMPLATE.md
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-githubissue_templatefeatyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 .github/ISSUE_TEMPLATE/feat.yml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-githubissue_templatefixyml" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 .github/ISSUE_TEMPLATE/fix.yml
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-registro-de-versiones-tagging" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Registro de versiones (tagging)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-roles-y-responsabilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Roles y responsabilidades
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apendice-readme-y-navegacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apéndice — README y navegación
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dudas-frecuentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dudas frecuentes
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Manual de Actualización (Git)</h1>
+
+<p>Boa! Seu conteúdo está correto, mas o arquivo ficou com quebras de formatação (blocos de código abertos, repetições e listas que perderam o markdown). Abaixo vai a <strong>versão revisada e padronizada</strong>, sem perder nada de informação. Pode <strong>substituir</strong> o arquivo por este conteúdo.</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Manual de Actualización de Documentación (Git)</span>
+
+<span class="k">&gt; </span><span class="ge">Proyecto: **Sistema Hospitalar**  </span>
+<span class="k">&gt; </span><span class="ge">Repositorio: `sistema-hospitalar-docs`  </span>
+<span class="k">&gt; </span><span class="ge">Fuente única de la verdad: **este repo** (carpeta `docs/`)</span>
+
+---
+
+<span class="gu">## 1. Prerrequisitos</span>
+<span class="k">-</span><span class="w"> </span>Git instalado y configurado (<span class="sb">`git --version`</span>).
+<span class="k">-</span><span class="w"> </span>Acceso al repo (SSH o HTTPS).
+<span class="k">-</span><span class="w"> </span>Editor Markdown (VS Code recomendado).
+<span class="k">-</span><span class="w"> </span>Convención de idioma: <span class="gs">**español**</span> en toda la documentación.
+
+---
+
+<span class="gu">## 2. Estructura de ramas</span>
+<span class="k">-</span><span class="w"> </span><span class="sb">`main`</span>: rama estable (siempre publicable).
+<span class="k">-</span><span class="w"> </span>Ramas de trabajo:
+<span class="w">  </span><span class="k">-</span><span class="w"> </span><span class="sb">`feat/...`</span> para nuevas secciones o documentos.
+<span class="w">  </span><span class="k">-</span><span class="w"> </span><span class="sb">`fix/...`</span> para correcciones.
+<span class="w">  </span><span class="k">-</span><span class="w"> </span><span class="sb">`docs/...`</span> para cambios menores de documentación.
+
+<span class="gs">**Ejemplos:**</span>
+```bash
+git checkout -b feat/modelo-datos-ampliacion
+git checkout -b fix/typos-manual-uso
+</code></pre></div>
+<hr />
+<h2 id="3-flujo-basico-de-trabajo">3. Flujo básico de trabajo<a class="headerlink" href="#3-flujo-basico-de-trabajo" title="Permanent link">&para;</a></h2>
+<h3 id="31-actualizar-main-local">3.1 Actualizar <code>main</code> local<a class="headerlink" href="#31-actualizar-main-local" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+</code></pre></div>
+<h3 id="32-crear-rama-de-trabajo">3.2 Crear rama de trabajo<a class="headerlink" href="#32-crear-rama-de-trabajo" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feat/nombre-descriptivo
+</code></pre></div>
+<h3 id="33-editar-y-validar">3.3 Editar y validar<a class="headerlink" href="#33-editar-y-validar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Editar archivos en <code>docs/</code> (o agregar nuevos).</li>
+<li>Validar cambios (vista previa en VS Code).</li>
+</ul>
+<h3 id="34-commit-con-convencion">3.4 Commit con convención<a class="headerlink" href="#34-commit-con-convencion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>docs/03-mvp/Resumen-MVP1-MVP2.md
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;feat(mvp): agregar métricas de adopción y tabla de KPIs&quot;</span>
+</code></pre></div>
+<h3 id="35-push-y-pull-request">3.5 Push y Pull Request<a class="headerlink" href="#35-push-y-pull-request" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>feat/nombre-descriptivo
+</code></pre></div>
+<ul>
+<li>Abrir PR en GitHub → base <code>main</code>.</li>
+<li>Completar el template de PR (objetivo, alcance, checklist).</li>
+<li>Solicitar revisión (mínimo 1).</li>
+</ul>
+<h3 id="36-revision-y-merge">3.6 Revisión y merge<a class="headerlink" href="#36-revision-y-merge" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cumplir checklist (sección 7).</li>
+<li>Realizar <strong>Squash and merge</strong> o <strong>Merge commit</strong>.</li>
+<li>Borrar rama si procede.</li>
+</ul>
+<hr />
+<h2 id="4-convenciones-de-commit-conventional-commits">4. Convenciones de commit (Conventional Commits)<a class="headerlink" href="#4-convenciones-de-commit-conventional-commits" title="Permanent link">&para;</a></h2>
+<p><strong>Tipos más usados:</strong></p>
+<ul>
+<li><code>feat:</code> contenido nuevo relevante.</li>
+<li><code>fix:</code> correcciones.</li>
+<li><code>docs:</code> cambios menores (formato, enlaces).</li>
+<li><code>refactor:</code> reestructuración sin cambio de contenido.</li>
+<li><code>chore:</code> mantenimiento.</li>
+</ul>
+<p><strong>Ejemplos:</strong></p>
+<div class="highlight"><pre><span></span><code>feat(discovery): añadir mapa hace/no hace para admisiones
+fix(modelo-datos): corregir relación atenciones→admisiones
+docs(negocio): actualizar KPIs de adopción 2025-Q4
+</code></pre></div>
+<hr />
+<h2 id="5-versionado-semantico-y-changelog">5. Versionado semántico y changelog<a class="headerlink" href="#5-versionado-semantico-y-changelog" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Etiquetas: <code>vMAJOR.MINOR.PATCH</code> (ej.: <code>v0.2.0</code>)</li>
+<li>Actualizar <code>CHANGELOG.md</code> con secciones: <strong>Added / Changed / Fixed</strong>.</li>
+</ul>
+<p><strong>Comandos:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>v0.2.0
+git<span class="w"> </span>push<span class="w"> </span>--tags
+</code></pre></div>
+<hr />
+<h2 id="6-ubicaciones-canonicas-de-documentos">6. Ubicaciones canónicas de documentos<a class="headerlink" href="#6-ubicaciones-canonicas-de-documentos" title="Permanent link">&para;</a></h2>
+<p>Colocar documentación en <code>docs/</code> siguiendo esta jerarquía:</p>
+<div class="highlight"><pre><span></span><code>docs/
+├─ 01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md
+├─ 02-negocio/Documento-de-Negocio.md
+├─ 03-mvp/Resumen-MVP1-MVP2.md
+├─ 04-discovery/Jornadas-y-Mapa-de-Usuario.md
+├─ 05-modelo-datos/Modelo-ER-Textual.md
+├─ 06-manual-uso/Manual-Medicos-Recepcionistas.md
+├─ 07-privacidad/Politica-Proteccion-de-Datos.md
+└─ 00-gobernanza/Manual-Actualizacion-Git.md   ← (este archivo)
+</code></pre></div>
+<p>Crear un índice navegable en <code>docs/index.md</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="gh"># Sistema Hospitalar — Índice de Documentación</span>
+
+<span class="k">-</span><span class="w"> </span><span class="gs">**Técnico**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Prompt Maestro</span>](<span class="na">01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Negocio**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Documento de Negocio</span>](<span class="na">02-negocio/Documento-de-Negocio.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**MVP y Roadmap**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Resumen MVP1/MVP2</span>](<span class="na">03-mvp/Resumen-MVP1-MVP2.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Discovery**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Jornadas y Mapa de Usuario</span>](<span class="na">04-discovery/Jornadas-y-Mapa-de-Usuario.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Modelo de Datos**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Modelo ER Textual</span>](<span class="na">05-modelo-datos/Modelo-ER-Textual.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Manuales**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Manual Médicos y Recepcionistas</span>](<span class="na">06-manual-uso/Manual-Medicos-Recepcionistas.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Privacidad**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Política de Protección de Datos</span>](<span class="na">07-privacidad/Politica-Proteccion-de-Datos.md</span>)
+<span class="k">-</span><span class="w"> </span><span class="gs">**Gobernanza**</span>
+<span class="w">  </span><span class="k">-</span><span class="w"> </span>[<span class="nt">Manual de Actualización (Git)</span>](<span class="na">00-gobernanza/Manual-Actualizacion-Git.md</span>)
+</code></pre></div>
+<hr />
+<h2 id="7-checklist-antes-del-merge-pr">7. Checklist antes del merge (PR)<a class="headerlink" href="#7-checklist-antes-del-merge-pr" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Texto en <strong>español</strong> y consistente.</li>
+<li>[ ] Títulos y estructura Markdown correctos (<code>#</code>, <code>##</code>, <code>###</code>).</li>
+<li>[ ] Enlaces internos funcionando.</li>
+<li>[ ] Tablas y listas legibles.</li>
+<li>[ ] <code>CHANGELOG.md</code> actualizado si aplica.</li>
+<li>[ ] Commit message con convención.</li>
+<li>[ ] Revisión realizada.</li>
+</ul>
+<hr />
+<h2 id="8-comandos-utiles">8. Comandos útiles<a class="headerlink" href="#8-comandos-utiles" title="Permanent link">&para;</a></h2>
+<p><strong>Sincronizar con <code>main</code>:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>fetch<span class="w"> </span>origin
+git<span class="w"> </span>rebase<span class="w"> </span>origin/main
+<span class="c1"># o:</span>
+<span class="c1"># git merge origin/main</span>
+</code></pre></div>
+<p><strong>Resolver conflictos:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># editar archivos con conflicto</span>
+git<span class="w"> </span>add<span class="w"> </span>&lt;archivos_resueltos&gt;
+git<span class="w"> </span>rebase<span class="w"> </span>--continue<span class="w">   </span><span class="c1"># o git commit si era merge</span>
+</code></pre></div>
+<p><strong>Eliminar rama local y remota:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>feat/nombre-descriptivo
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>--delete<span class="w"> </span>feat/nombre-descriptivo
+</code></pre></div>
+<p><strong>Histórico visual:</strong></p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>log<span class="w"> </span>--oneline<span class="w"> </span>--graph<span class="w"> </span>--decorate<span class="w"> </span>--all
+</code></pre></div>
+<hr />
+<h2 id="9-buenas-practicas">9. Buenas prácticas<a class="headerlink" href="#9-buenas-practicas" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Un cambio lógico por PR (pequeño y revisable).</li>
+<li>Nombres de archivos descriptivos en <em>Pascal-Case-Con-Guiones.md</em>.</li>
+<li>No mezclar temas (ej.: “negocio” y “modelo de datos” en el mismo PR).</li>
+<li>Coherencia con el <strong>Prompt Maestro</strong> y el <strong>Índice</strong>.</li>
+<li>Documentar decisiones relevantes al final de cada archivo (sección “Notas de decisión”).</li>
+</ul>
+<hr />
+<h2 id="10-plantillas-recomendadas">10. Plantillas (recomendadas)<a class="headerlink" href="#10-plantillas-recomendadas" title="Permanent link">&para;</a></h2>
+<h3 id="101-githubpull_request_templatemd">10.1 <code>.github/PULL_REQUEST_TEMPLATE.md</code><a class="headerlink" href="#101-githubpull_request_templatemd" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gu">## Objetivo</span>
+Describir qué cambia y para qué.
+
+<span class="gu">## Alcance</span>
+<span class="k">- [ ]</span> Documentos afectados:
+<span class="w">  </span><span class="k">- [ ]</span> 01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md
+<span class="w">  </span><span class="k">- [ ]</span> 03-mvp/Resumen-MVP1-MVP2.md
+<span class="w">  </span><span class="k">- [ ]</span> 04-discovery/Jornadas-y-Mapa-de-Usuario.md
+<span class="w">  </span><span class="k">- [ ]</span> 05-modelo-datos/Modelo-ER-Textual.md
+<span class="w">  </span><span class="k">- [ ]</span> 06-manual-uso/Manual-Medicos-Recepcionistas.md
+<span class="w">  </span><span class="k">- [ ]</span> 07-privacidad/Politica-Proteccion-de-Datos.md
+<span class="w">  </span><span class="k">- [ ]</span> 00-gobernanza/Manual-Actualizacion-Git.md
+
+<span class="gu">## Checklist</span>
+<span class="k">- [ ]</span> Escrito en <span class="gs">**español**</span>
+<span class="k">- [ ]</span> Enlaces internos verificados
+<span class="k">- [ ]</span> CHANGELOG actualizado si aplica
+<span class="k">- [ ]</span> Commits con convención
+</code></pre></div>
+<h3 id="102-githubissue_templatefeatyml">10.2 <code>.github/ISSUE_TEMPLATE/feat.yml</code><a class="headerlink" href="#102-githubissue_templatefeatyml" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>name: Nueva sección o mejora
+description: Proponer contenido nuevo o ampliación en los docs
+labels: [feat, docs]
+body:
+  - type: textarea
+    attributes:
+      label: Objetivo de negocio/técnico
+  - type: textarea
+    attributes:
+      label: Alcance (secciones/archivos)
+  - type: textarea
+    attributes:
+      label: Criterios de aceptación
+</code></pre></div>
+<h3 id="103-githubissue_templatefixyml">10.3 <code>.github/ISSUE_TEMPLATE/fix.yml</code><a class="headerlink" href="#103-githubissue_templatefixyml" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>name: Corrección de documentación
+description: Error, incoherencia o desactualización en los docs
+labels: [fix, docs]
+body:
+  - type: textarea
+    attributes:
+      label: Descripción del problema
+  - type: textarea
+    attributes:
+      label: Evidencia / enlaces
+  - type: input
+    attributes:
+      label: Archivos afectados
+</code></pre></div>
+<hr />
+<h2 id="11-registro-de-versiones-tagging">11. Registro de versiones (tagging)<a class="headerlink" href="#11-registro-de-versiones-tagging" title="Permanent link">&para;</a></h2>
+<p>Crear versión cuando haya cambios significativos:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>tag<span class="w"> </span>v0.1.0
+git<span class="w"> </span>push<span class="w"> </span>--tags
+</code></pre></div>
+<p>Actualizar <code>CHANGELOG.md</code> bajo la fecha y la versión correspondiente.</p>
+<hr />
+<h2 id="12-roles-y-responsabilidades">12. Roles y responsabilidades<a class="headerlink" href="#12-roles-y-responsabilidades" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Rol</th>
+<th>Función principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Editor</strong></td>
+<td>Redacta o actualiza documentos en ramas <code>feat/*</code> o <code>docs/*</code>.</td>
+</tr>
+<tr>
+<td><strong>Revisor</strong></td>
+<td>Valida estilo, enlaces y coherencia con el Índice.</td>
+</tr>
+<tr>
+<td><strong>Mantenedor</strong></td>
+<td>Aprueba PR, gestiona versiones (tags) y <code>CHANGELOG</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="apendice-readme-y-navegacion">Apéndice — README y navegación<a class="headerlink" href="#apendice-readme-y-navegacion" title="Permanent link">&para;</a></h2>
+<p>En <code>README.md</code>, enlazar el índice:</p>
+<div class="highlight"><pre><span></span><code>Consulte el <span class="gs">**[Índice de Documentación](docs/index.md)**</span> para navegar por todo el contenido.
+</code></pre></div>
+<hr />
+<h2 id="dudas-frecuentes">Dudas frecuentes<a class="headerlink" href="#dudas-frecuentes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>¿Puedo editar directo en <code>main</code>?</strong> → No. Usa ramas y PR.</li>
+<li><strong>¿Qué pasa si no uso Conventional Commits?</strong> → Se pierde trazabilidad.</li>
+<li><strong>¿La Wiki es obligatoria?</strong> → No, opcional como portal; la fuente es <code>docs/</code>.</li>
+</ul>
+<hr />
+<p><strong>Fin del documento</strong></p>
+<p>```</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/halrrik/sistema-hospitalar-docs" target="_blank" rel="noopener" title="Repositorio oficial en GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "toc.integrate", "content.code.annotate", "search.suggest", "search.highlight", "navigation.instant"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
