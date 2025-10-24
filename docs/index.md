@@ -47,6 +47,6 @@ Guía completa: [Manual de Actualización (Git)](00-gobernanza/Manual-Actualizac
 
 <!--
 - [README (raíz del repo)](../README.md)
-- [CHANGELOG (histórico de versiones)](../CHANGELOG.md)
+- [CHANGELOG (histórico de versiones)](../CHANGELOG.md)XZXZ
 -->
 ---
