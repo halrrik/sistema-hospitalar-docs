@@ -1,19 +1,22 @@
 site_name: Sistema Hospitalar — Documentación
+site_description: Documentación técnica y funcional del Sistema Hospitalar (Clínica Perú)
+site_author: Equipo de Desarrollo
+
 docs_dir: docs
 strict: true
 
 nav:
   - Inicio: index.md
   - Técnico:
-      - Prompt Maestro: 01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md
+      - Prompt Maestro — Sistema Hospitalar: 01-tecnico/Prompt-Maestro-Sistema-Hospitalar.md
   - Negocio:
       - Documento de Negocio: 02-negocio/Documento-de-Negocio.md
   - MVP y Roadmap:
-      - Resumen MVP1/MVP2: 03-mvp/Resumen-MVP1-MVP2.md
+      - Resumen MVP1 / MVP2: 03-mvp/Resumen-MVP1-MVP2.md
   - Discovery:
       - Jornadas y Mapa de Usuario: 04-discovery/Jornadas-y-Mapa-de-Usuario.md
   - Modelo de Datos:
-      - Modelo ER textual: 05-modelo-datos/Modelo-ER-Textual.md
+      - Modelo ER Textual: 05-modelo-datos/Modelo-ER-Textual.md
   - Manuales:
       - Manual Médicos y Recepcionistas: 06-manual-uso/Manual-Medicos-Recepcionistas.md
   - Privacidad:
@@ -23,9 +26,30 @@ nav:
 
 theme:
   name: material
+  language: es
+  features:
+    - navigation.expand
+    - toc.integrate
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - navigation.instant
 
 markdown_extensions:
   - admonition
+  - codehilite
   - tables
   - toc:
       permalink: true
+  - footnotes
+  - def_list
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/halrrik/sistema-hospitalar-docs
+      name: Repositorio oficial en GitHub
