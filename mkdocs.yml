@@ -23,6 +23,8 @@ nav:
       - Política de Protección de Datos: 07-privacidad/Politica-Proteccion-de-Datos.md
   - Gobernanza:
       - Manual de Actualización (Git): 00-gobernanza/Manual-Actualizacion-Git.md
+      - Flujo de Mantenimiento (General): 00-gobernanza/Flujo-de-Mantenimiento.md
+      - Flujo de Mantenimiento Mensual: 00-gobernanza/Flujo-de-Mantenimiento-Mensual.md
 
 theme:
   name: material

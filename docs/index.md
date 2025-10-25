@@ -30,6 +30,9 @@ Todo el contenido está organizado en carpetas temáticas dentro de `docs/`.
 
 - **Gobernanza**
   - [Manual de Actualización (Git)](00-gobernanza/Manual-Actualizacion-Git.md)
+  - [Flujo de Mantenimiento (General)](00-gobernanza/Flujo-de-Mantenimiento.md)
+  - [Flujo de Mantenimiento Mensual](00-gobernanza/Flujo-de-Mantenimiento-Mensual.md)
+
 
 ---
 
